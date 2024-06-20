@@ -2,52 +2,150 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Boba</title>
-    <link rel="icon" href="favicon.jpeg" type="jpeg">
-    <link href="style.css" rel="stylesheet">
-    <link href="utils.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Boba</title>
+  <link rel="icon" href="favicon.jpeg" type="jpeg" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="utils.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container ">
-        <header>
-            <img class="logo" src="logo.png" alt="boba shop logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </header>
-        <main>
-            <img class="boba move" src="boba.png" alt="boba shop logo" speed="5">
-            <div class="headline"><h1 >Get Your <span>Fresh Fix</span><br> at <span>Fresh Boba!</span>
-            </h1>
-            <p>Discover Fresh Boba's refreshing drinks, crafted with care for pure enjoyment. From classic to creative flavors, each sip is a delight.</p> 
-            <button class="button">Order Now</button>
+  <div class="container">
+    <header>
+      <img class="logo" src="logo.png" alt="boba shop logo" />
+      <nav>
+        <ul class="nav-items">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#popular">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        </main>
-        
-    </div>
-
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Welcome to Fresh Boba!</h2>
-            <p>This is where your modal content goes. You can customize it as needed.</p>
+        <div class="menu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#popular">Menu</a>
+          <a href="#contact">Contact</a>
         </div>
+      </nav>
+    </header>
+    <main id="home">
+      <img class="boba move" src="boba.png" alt="boba shop logo" speed="5" />
+      <div class="headline">
+        <h1>
+          Get Your <span>Fresh Fix</span><br />
+          at <span>Fresh Boba!</span>
+        </h1>
+        <p>
+          Discover Fresh Boba's refreshing drinks, crafted with care for pure
+          enjoyment. From classic to creative flavors, each sip is a delight.
+        </p>
+        <button class="button">Order Now</button>
+      </div>
+    </main>
+
+    <section class="about" id="about">
+      <h2>About Us</h2>
+      <p>
+        At Fresh Boba, we are passionate about creating the best bubble tea
+        experience for our customers. Our journey began in 2010 with a simple
+        goal: to share our love for boba tea with the world.
+      </p>
+    </section>
+
+    <section class="popular" id="popular">
+      <h3>Popular Now</h3>
+      <div class="popular-items">
+        <div class="item">
+          <img src="item1.png" alt="Classic Milk Tea" />
+          <div class="item-details">
+            <h4>Classic Milk Tea</h4>
+            <p>
+              A perfect blend of black tea, milk, and tapioca pearls. A
+              timeless favorite.
+            </p>
+            <button>Add to Cart</button>
+          </div>
+
+        </div>
+        <div class="item">
+          <img src="item2.png" alt="Taro Milk Tea" />
+          <div class="item-details">
+            <h4>Taro Milk Tea</h4>
+            <p>
+              Sweet and creamy, this purple delight is made from taro root and topped with chewy boba.
+            </p>
+            <button>Add to Cart</button>
+          </div>
+
+        </div>
+        <div class="item">
+          <img src="item3.png" alt="Matcha Green Tea" />
+          <div class="item-details">
+            <h4>Matcha Green Tea</h4>
+            <p>
+              A refreshing and healthy option ,this drink combines matcha green tea with a hint of sweetness.
+            </p>
+            <button>Add to Cart</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h3>Contact Us</h3>
+      <p>
+        We'd love to hear from you! Reach out to us with any questions or feedback.
+      </p>
+      <button class="message">Send Message</button>
+    </section>
+
+    <footer>
+      <!--
+        <div class="social-media">
+          <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
+          <a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
+        </div>
+        -->
+      <p>&copy; 2024 Fresh Boba. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Welcome to Fresh Boba!</h2>
+      <!--<p>Enter your email to continue :</p>-->
+      <form class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required /><br />
+        <input type="email" id="mail" placeholder="Your Email" required /><br />
+        <button class="continue">Continue</button>
+      </form>
     </div>
+    <img src="modal.jpeg" alt="friends having boba" />
+  </div>
 
+  <div class="thanks-modal">
+    <div class="modal-content thanks">
+      <span class="close2">&times;</span>
+      <h2>Thank You, <span id="userName"></span>!</h2>
+      <p>Please check your mail !</p>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
-    
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,133 +1,916 @@
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     font-family: "Coiny", system-ui;
     font-weight: 400;
     font-style: normal;
     box-sizing: border-box;
 }
-html{
-    font-size:20px;
+
+html {
+    font-size: 20px;
 }
-body{
-    background-color: #271a11f6;
-      
+
+body {
+    background-color: #271a11;
 }
-header{
-    
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-   
-}
-header a{
-    text-decoration: none;
-    color:white;
-}
-header a:hover {
-    color:#dcb499;
-    
-}
-ul{
-    display: flex;
-    flex-direction:row;
-    list-style-type: none;
-    margin-left: auto;
-    
-}
-li{
-    margin-right: 2rem;
-    color:white;
-   
-}
-main{
-    
+
+header {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
-h1{
-    color:white;
-   
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover {
+    color: #dcb499;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: auto;
+}
+
+li {
+    margin-right: 2rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: #634832;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.menu a {
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    color: #271a11;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    color: white;
     font-size: 2.4rem;
 }
-h1 span{
-    color:#dcb499;
+
+h1 span {
+    color: #dcb499;
 }
-.logo{
-    height:5rem;
-    margin-left:5rem;
+
+footer {
+    background-color: #dcb499;
+    text-align: center;
+}
+
+.logo {
+    height: 5rem;
+    margin-left: 5rem;
     margin-right: auto;
 }
-.boba{
-    height:15rem;
-    margin:3.5rem 0 0 8rem;
 
+.boba {
+    max-height: 15rem;
+    margin: 3.5rem 0 0 8rem;
 }
 
-.headline{
-    margin-top:2.3rem;
-    margin-left:15%;
-    margin-right:auto;
+.headline {
+    margin-top: 2.3rem;
+    margin-left: 15%;
+    margin-right: auto;
 }
-.headline p{
-    color:white;
-    margin-top:10px;
-    width:80%;
+
+.headline p {
+    color: white;
+    margin-top: 10px;
+    width: 80%;
     font-size: small;
-}
-.headline button{
-    padding:5px;
-    font-family: "Coiny", system-ui;
-    background-color:#dcb499;
-    border-radius: 5px;
-    color:white;
-    margin-top: 20px;
-    width:200px;
-    font-size: medium;
-    border:1px solid #dcb499;
-}
-.container{
-    width: 100vw; 
-    height: 100vh; 
-    max-width: 100%; 
-    overflow-x: hidden; 
+    text-align: justify;
 }
 
+.headline button {
+    padding: 5px;
+    font-family: "Coiny", system-ui;
+    background-color: #dcb499;
+    border-radius: 5px;
+    color: #38220f;
+    margin-top: 20px;
+    width: 200px;
+    font-size: medium;
+    border: 1px solid #dcb499;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
-    backdrop-filter:b;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.thanks-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
     background-color: #dabca8;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    margin: 5% auto;
+    padding: 30px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on content */
-    max-width: 600px; /* Max width of modal */
-    border-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-width: 500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    margin-bottom: 0;
 }
 
+.thanks {
+    margin: 10% auto;
+    border-radius: 5px;
+}
+
+.modal h2 {
+    text-align: center;
+}
+
+.modal input {
+    background-color: rgba(250, 235, 215, 0.863);
+    border-radius: 20px;
+    margin: 10px calc(50% - 150px);
+    width: 300px;
+    padding-left: 20px;
+    border: 1.4px dashed #634832
+}
+
+::placeholder {
+    color: #271a11a4;
+}
+
+.continue {
+    border-radius: 5px;
+    padding: 0 20px;
+    width: 150px;
+    margin: auto;
+    display: block;
+    background-color: #38220f;
+    color: antiquewhite;
+    margin-top: 10px;
+}
+
+.modal img {
+    display: block;
+    max-width: 500px;
+    margin: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.close,
+.close2 {
+    color: antiquewhite;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close2:hover,
+.close2:focus,
 .close:hover,
 .close:focus {
-    color: black;
+    color: #634832;
     text-decoration: none;
     cursor: pointer;
 }
 
+.popular {
+    margin: 70px;
+}
+
+.popular h3 {
+    width: max-content;
+    background-color: #3f2d1f;
+    font-size: x-large;
+    color: #e2d0c3;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    padding: 2px 30px;
+    border-radius: 5px;
+    border: 3px ridge #e2d0c3
+}
+
+.popular-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.item {
+    background-color: #e2d0c3;
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item img {
+    width: 70%;
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.item h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.item p {
+    font-size: xx-small;
+    text-align: justify;
+}
+
+.item button {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 0 10px;
+    font-size: x-small;
+    background-color: #38220f;
+    color: white;
+}
+
+.item button:hover {
+    cursor: pointer;
+}
+
+.about {
+    margin: 60px 150px;
+    background-color: #634832;
+    padding: 30px 100px 50px;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.833);
+    border: 5px dashed #dcb499;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about h2 {
+    margin: auto;
+    color: #271a11;
+    font-size: 1.8rem;
+
+}
+
+.about p {
+    text-align: justify;
+}
+
+.contact {
+    color: antiquewhite;
+
+    background: linear-gradient(#271a11, #dcb499);
+    padding: 20px;
+}
+
+.contact h3 {
+    text-align: center;
+    font-size: x-large;
+}
+
+.contact p {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact button {
+    margin: 0 calc(50% - 100px);
+    align-items: center;
+    width: 200px;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #271a11;
+    color: antiquewhite;
+}
+
+.contact button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+
+/*media queries*/
+@media (max-width: 1280px) {
+    .headline {
+        margin-left: 7%;
+    }
+
+    .about {
+        margin: 50px 100px;
+    }
+
+    .modal-content {
+        background-color: #dabca8;
+        margin: 3% auto;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:1024px) {
+    li {
+        font-size: 1.2rem;
+    }
+
+    .boba {
+        max-height: 12rem;
+        margin-left: 120px;
+    }
+
+    .headline {
+        margin-left: 3%;
+    }
+
+    .headline h1 {
+        font-size: 38px;
+    }
+
+    .headline p {
+        font-size: 0.8;
+    }
+
+    .about {
+        margin: 50px 90px;
+        padding: 10px 30px 20px;
+        border: 3px dashed #dcb499;
+        border-radius: 45px;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p {
+        font-size: 17px;
+    }
+
+    .popular h3 {
+        font-size: large;
+
+    }
+}
+
+@media (max-width:786px) {
+    body {
+        margin: 0;
+    }
+
+    .logo {
+        height: 3.5rem;
+        margin-left: 3rem;
+        margin-right: auto;
+    }
+
+    li {
+        font-size: 0.7rem;
+    }
+
+    .boba {
+        max-height: 10.7rem;
+        margin-left: 90px;
+    }
+
+    .headline {
+        margin: 25px;
+        margin-top: 40px;
+    }
+
+    .headline h1 {
+        font-size: 1.4rem;
+    }
+
+    .headline p {
+        font-size: 0.6rem;
+        font-weight: 100;
+    }
+
+    .headline button {
+        padding: 4px;
+        margin-top: 17px;
+        width: 150px;
+        font-size: 1rem;
+        border: 1px solid #dcb499;
+    }
+
+    .about {
+        margin: 40px 30px;
+    }
+
+    .about h2 {
+        font-size: 1.25rem;
+    }
+
+    .about p {
+        font-size: 0.6rem;
+    }
+
+    .popular {
+        margin: 50px 20px;
+    }
+
+    .popular h3 {
+        font-size: medium;
+    }
+
+    .contact h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact p {
+        font-size: 0.8rem;
+    }
+
+    .message {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        padding: 20px;
+        max-width: 350px;
+        margin-bottom: 0;
+    }
+
+    .modal h2 {
+        font-size: medium;
+        text-align: center;
+    }
+
+    .modal input {
+        margin: 3px calc(50% - 100px);
+        width: 200px;
+        padding-left: 10px;
+        font-size: 0.7rem;
+    }
+
+    .modal button {
+        font-size: 0.7rem;
+    }
+
+    .modal img {
+        max-width: 350px;
+    }
+
+    li {
+        margin-right: 1.3rem;
+    }
+
+    .item p {
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        height: 2.5rem;
+    }
+
+    .logo {
+        height: 2.5rem;
+        margin-left: 2em;
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-right: 2rem;
+    }
+
+    .hamburger div {
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hamburger.active+.menu {
+        display: flex;
+        z-index: 999;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .boba {
+        height: 7rem;
+        margin-left: 50px;
+    }
+
+    .headline {
+        margin: 25px;
+        margin-top: 30px;
+    }
+
+    .headline h1 {
+        font-size: 1.2rem;
+    }
+
+    .headline p {
+        font-size: 0.45rem;
+    }
+
+    .headline button {
+        padding: 2px;
+        margin-top: 13px;
+        width: 100px;
+        font-size: 0.7rem;
+    }
+
+    .item h4 {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+
+    .item p {
+        line-height: 15px;
+        font-size: 0.5rem;
+    }
+
+    .item button {
+        font-size: 0.5rem;
+    }
+
+
+    .popular {
+        margin: 14px;
+    }
+
+    .item {
+        width: calc(33.333% - 10px);
+    }
+
+    .popular-items {
+        gap: 10px;
+    }
+
+    .contact h3 {
+        font-size: 0.8rem;
+    }
+
+    .contact p {
+        font-size: 0.6rem;
+    }
+
+    .contact button {
+        padding: 2px;
+        font-size: 0.6rem;
+    }
+
+    .about {
+        margin: 15px;
+        margin-bottom: 30px;
+    }
+
+    .about h2 {
+        font-size: 1rem;
+    }
+
+    .about p {
+        font-size: 0.55rem;
+    }
+
+    .popular h3 {
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        margin: 3% auto;
+        padding: 10px;
+        max-width: 250px;
+        margin-bottom: 0;
+
+    }
+
+    .modal h2 {
+        font-size: x-small;
+        text-align: center;
+    }
+
+    .modal input {
+        margin: 3px calc(50% - 75px);
+        width: 150px;
+        padding-left: 10px;
+
+    }
+
+    .modal button {
+        font-size: 0.5rem;
+    }
+
+    .modal img {
+        max-width: 250px;
+
+    }
+
+    .close,
+    .close2 {
+        font-size: 25px;
+    }
+
+    .thanks-modal {
+        font-size: xx-small;
+    }
+}
+
+@media (max-width: 475px) {
+
+
+    .logo {
+        margin-left: 20px;
+        height: 3rem;
+    }
+
+    .hamburger div {
+        width: 20px;
+        height: 1.8px;
+        margin: 2px 0;
+    }
+
+    .menu a {
+        font-size: x-small;
+
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .headline {
+        padding: 5px;
+        order: 1;
+        margin: 10px 10px 0 10px;
+    }
+
+    .headline h1 {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .headline p {
+        font-size: 9px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .headline button {
+        padding: 2px;
+        margin: 0 10px 0 0;
+        width: 100px;
+        font-size: 0.5rem;
+    }
+
+
+    .boba {
+        max-width: 100%;
+        height: 140px;
+        order: 2;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .about {
+        padding: 15px 10px;
+        border: 1.4px dashed #dcb499;
+        border-radius: 20px;
+        order: 3;
+        margin-bottom: 15px;
+    }
+
+    .about h2 {
+        font-size: 15px;
+
+    }
+
+    .about p {
+        font-size: 8px;
+        line-height: 1.4;
+    }
+
+    .popular {
+        margin: 0;
+        padding: 10px 10px;
+        order: 4;
+    }
+
+    .popular h3 {
+        margin: auto;
+        font-size: 14px;
+        margin-bottom: 8px;
+        border: 1.5px ridge #e2d0c3;
+    }
+
+    .popular-items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .popular-items .item {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        border: 1.7px solid white;
+    }
+
+    .item img {
+
+        width: 35%;
+    }
+
+    .popular-items .item-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 15px 10px 10px 0;
+
+    }
+
+
+    .popular-items .item h4 {
+        font-size: 10px;
+        margin-bottom: 10px;
+
+        text-align: left;
+    }
+
+    .popular-items .item p {
+        font-size: 8px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+
+    .popular-items .item button {
+        font-size: 0.35rem;
+        padding: 0px 0px;
+        width: 70px;
+        margin-top: 5px;
+    }
+
+    .contact h3 {
+        font-size: 0.55rem;
+    }
+
+    .contact p {
+        font-size: 0.4rem;
+        margin-bottom: 0px;
+    }
+
+    .contact button {
+        padding: 0px;
+        font-size: 0.4rem;
+        width: 80px;
+        margin: 0 calc(50% - 40px);
+
+    }
+
+    .modal-content {
+        margin: 3% auto;
+        padding: 10px;
+        max-width: 200px;
+        margin-bottom: 0;
+
+    }
+
+    .modal h2 {
+        font-size: xx-small;
+        text-align: center;
+    }
+
+    .modal input {
+        margin: 3px calc(50% - 60px);
+        width: 120px;
+        height: 20px;
+        padding-left: 10px;
+        font-size: 0.45rem;
+    }
+
+    .modal button {
+        font-size: 0.4rem;
+        width: 80px;
+    }
+
+    .modal img {
+        max-width: 200px;
+
+    }
+
+    .close,
+    .close2 {
+        font-size: 18px;
+    }
+
+    .thanks-modal {
+        font-size: xx-small;
+    }
+
+    footer {
+        font-size: 0.3rem;
+
+    }
+
+}
